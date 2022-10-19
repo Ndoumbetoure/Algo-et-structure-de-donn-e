@@ -1,0 +1,44 @@
+ALGORITHM nombre_caractere_mot_voyelle
+VAR
+    nbr_caractere,nbr_mots,nbr_voyelle_maj,nbr_voyelle_min,i : INTEGER := 0;
+    phrase : STRING := (30);
+    taille_pharase : INTEGER
+
+BEGIN
+
+    REPEAT
+        Write("Veuillez entrer une phrase please!");
+        Read(phrase);
+    UNTIL (taille_pharase>0)
+
+    WHILE (phrase[i] <> ".") DO
+
+        nbr_caractere:= nbr_caractere + 1;
+
+        IF (phrase[i] == " ") THEN
+            nbr_mots := nbr_mots + 1;
+        END_IF
+
+        
+        IF ( phrase[i] = "a" Or phrase[i] = "o" Or phrase[i] = "i" 
+            Or phrase[i] = "u" Or phrase[i] = "e" Or phrase[i] = "y" 
+            Or phrase[i] = "é" Or phrase[i] = "è" Or phrase[i] = "ê" 
+            Or phrase[i] = "ô" Or phrase[i] = "â" Or phrase[i] = "à"
+            Or phrase[i] = "A" Or phrase[i] = "E" Or phrase[i] = "I" 
+            Or phrase[i] = "O" Or phrase[i] = "U" Or phrase[i] = "Y") THEN
+            
+            nbr_voyelle := nbr_voyelle + 1; 
+        END_IF
+
+        i++;
+    END_WHILE
+
+        nbr_mots++;
+     
+         Read("le nombre de caractere est:", nbr_caractere);
+         Read("le nombre de mot est", nbr_mots);
+         Read("le nombre de voyelle majuscule est", nbr_voyelle);
+
+END
+
+
